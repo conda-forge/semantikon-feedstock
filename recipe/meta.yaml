@@ -23,7 +23,7 @@ requirements:
     - versioneer
   run:
     - python >={{ python_min }}
-    - numpy >=1.26.4, <=2.2.1
+    - numpy >=1.26.3, <=2.2.1
     - pint >=0.24.3, <=0.24.4
 
 test:
