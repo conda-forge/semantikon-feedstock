@@ -1,5 +1,5 @@
 {% set name = "semantikon" %}
-{% set version = "0.0.7" %}
+{% set version = "0.0.8" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,12 +8,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: cfabfcbf3e653bd92613e912eb684b1237eaa7751a0bff7516e62364262d25fd
+  sha256: fb37ea7d57fef4bc5f3ccea65847c0706dd338995b3011d944967b8cbfe45d91
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   host:
