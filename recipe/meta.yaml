@@ -25,6 +25,8 @@ requirements:
     - python >={{ python_min }}
     - numpy >=1.26.3, <=2.2.1
     - pint >=0.24.3, <=0.24.4
+    - rdflib >=7.1.1, <=7.1.1
+    - owlrl >=7.1.2, <=7.1.2
 
 test:
   imports:
