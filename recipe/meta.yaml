@@ -27,6 +27,7 @@ requirements:
     - pint >=0.24.3, <=0.24.4
     - rdflib >=7.1.1, <=7.1.1
     - owlrl >=7.1.2, <=7.1.2
+    - networkx >=3.4.2, <=3.4.2
 
 test:
   imports:
