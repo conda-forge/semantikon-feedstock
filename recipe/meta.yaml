@@ -1,5 +1,5 @@
 {% set name = "semantikon" %}
-{% set version = "0.0.13" %}
+{% set version = "0.0.14" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 7487955294344249a8e04c1406023482a8eb234cca83aafffc35e11eefd03c28
+  sha256: 8b7330f8bb5987a49379a5c996792d1f2f9e8f50ff3192de2c0b880da25d9045
 
 build:
   noarch: python
@@ -28,6 +28,7 @@ requirements:
     - rdflib >=7.1.1, <=7.1.1
     - owlrl >=7.1.2, <=7.1.2
     - networkx >=3.4.2, <=3.4.2
+    - pyshacl >=0.30.0, <=0.30.0
 
 test:
   imports:
