@@ -1,5 +1,5 @@
 {% set name = "semantikon" %}
-{% set version = "0.0.14" %}
+{% set version = "0.0.15" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 8b7330f8bb5987a49379a5c996792d1f2f9e8f50ff3192de2c0b880da25d9045
+  sha256: 45a7340de0baf02132d3966278500db220c792feaf742ac6ed08099f14263e6f
 
 build:
   noarch: python
@@ -23,7 +23,7 @@ requirements:
     - versioneer
   run:
     - python >={{ python_min }}
-    - numpy >=1.26.3, <=2.2.1
+    - numpy >=1.26.3, <=2.2.3
     - pint >=0.24.3, <=0.24.4
     - rdflib >=7.1.1, <=7.1.1
     - owlrl >=7.1.2, <=7.1.2
