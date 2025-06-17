@@ -1,5 +1,5 @@
 {% set name = "semantikon" %}
-{% set version = "0.0.16" %}
+{% set version = "0.0.17" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 6af24c14041e2acd5003c2cb75fdec02c5e7a20685094eb17b3e01336729abc4
+  sha256: c46849be2679c1834357e18d79880b92c475dc624af4013a4352bc9b2982d175
 
 build:
   noarch: python
@@ -19,16 +19,19 @@ requirements:
   host:
     - python {{ python_min }}
     - pip
-    - setuptools
+    - setuptools >=80.9.0
     - versioneer
   run:
-    - python >={{ python_min }}
-    - numpy >=1.26.3, <=2.2.3
-    - pint >=0.24.3, <=0.24.4
-    - rdflib >=7.1.1, <=7.1.1
-    - owlrl >=7.1.2, <=7.1.2
-    - networkx >=3.4.2, <=3.4.2
-    - pyshacl >=0.30.0, <=0.30.0
+    - graphviz =12.2.1
+    - networkx >=3.4.2,<=3.4.2
+    - numpy >=1.26.3,<=2.2.3
+    - owlrl >=7.1.2,<=7.1.2
+    - pint >=0.24.3,<=0.24.4
+    - rdflib >=7.1.1,<=7.1.1
+    - pyshacl >=0.30.0,<=0.30.1
+    - python >={{ python_min }},<3.13
+    - python-graphviz =0.20.3
+    - typeguard =4.0.0
 
 test:
   imports:
