@@ -19,7 +19,7 @@ requirements:
   host:
     - python {{ python_min }}
     - pip
-    - setuptools
+    - setuptools >=80.9.0
     - versioneer
   run:
     - graphviz =12.2.1
