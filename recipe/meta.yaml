@@ -13,7 +13,7 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -22,15 +22,14 @@ requirements:
     - setuptools >=80.9.0
     - versioneer
   run:
-    - graphviz =12.2.1
-    - networkx >=3.4.2,<=3.4.2
-    - numpy >=1.26.3,<=2.2.3
-    - owlrl >=7.1.2,<=7.1.2
-    - pint >=0.24.3,<=0.24.4
-    - rdflib >=7.1.1,<=7.1.1
-    - pyshacl >=0.30.0,<=0.30.1
     - python >={{ python_min }},<3.13
-    - python-graphviz =0.20.3
+    - python-graphviz >=0.20.3,<=0.21
+    - networkx >=3.4.2,<3.5.0
+    - numpy >=1.26.3,<2.4.0
+    - owlrl >=7.1.2,<7.2.0
+    - pint >=0.23,<=0.24.4
+    - rdflib >=7.1.1,<7.2.0
+    - pyshacl >=0.30.0,<=0.30.1
     - requests >=2.0.0,<2.33.0
     - typeguard >=4.0.0,<4.5.0
 
