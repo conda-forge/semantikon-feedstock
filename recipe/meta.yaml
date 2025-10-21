@@ -1,6 +1,5 @@
 {% set name = "semantikon" %}
 {% set version = "0.0.23" %}
-{% set python_min = "3.10" %}
 
 package:
   name: {{ name|lower }}
@@ -19,8 +18,8 @@ requirements:
   host:
     - python {{ python_min }}
     - pip
-    - setuptools >=80.9.0
-    - versioneer
+    - hatchling
+    - hatch-vcs
   run:
     - python >={{ python_min }},<3.14
     - python-graphviz >=0.20.3,<=0.21
