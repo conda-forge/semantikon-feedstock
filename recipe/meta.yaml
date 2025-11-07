@@ -1,5 +1,5 @@
 {% set name = "semantikon" %}
-{% set version = "0.0.25" %}
+{% set version = "0.0.26" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: da12d07e6bef1fc651eac74a45ef6e667a2880ae40dfc9c3c42e34df17e2180b
+  sha256: b76b0f12a4bfb50bab44060b9c493ccac6da72540f77d9fa7507bd202922b590
 
 build:
   noarch: python
@@ -26,8 +26,8 @@ requirements:
     - networkx >=3.4.2,<3.5.0
     - numpy >=1.26.3,<2.4.0
     - owlrl >=7.1.2,<7.2.0
-    - pint >=0.23,<=0.25.1
-    - rdflib >=7.1.1,<7.4.0
+    - pint >=0.23,<=0.25.2
+    - rdflib >=7.1.1,<7.5.0
     - pyshacl >=0.30.0,<=0.30.1
     - requests >=2.28.0,<2.33.0
     - typeguard >=4.0.0,<4.5.0
