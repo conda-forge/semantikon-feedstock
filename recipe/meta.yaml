@@ -9,11 +9,13 @@ package:
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 1231fa87f9d1fa2df86142de582a6ffb4b769f451975ba8f6eeb2bc69b311518
+  patches:
+    - dep.patch
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -22,14 +24,14 @@ requirements:
     - hatchling
     - hatch-vcs
   run:
-    - bagofholding >=0.1.5,<=0.1.9
+    - bagofholding >=0.1.5,<=0.1.11
     - flowrep ==0.4.1
     - python >={{ python_min }},<3.15
     - python-graphviz >=0.20.3,<=0.21
-    - networkx ==3.5
+    - networkx >=3.5,<3.7
     - numpy >=2.3.0,<2.5.0
     - owlrl >=7.1.2,<7.2.0
-    - pint >=0.24,<=0.25.2
+    - pint >=0.24,<=0.25.3
     - rdflib >=7.1.1,<7.7.0
     - pyshacl >=0.30.0,<=0.31.0
     - requests >=2.28.0,<2.34.0
