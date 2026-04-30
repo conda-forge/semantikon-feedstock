@@ -1,30 +1,33 @@
-{% set name = "semantikon" %}
-{% set version = "1.1.0" %}
-{% set python_min = "3.11" %}
+schema_version: 1
+
+context:
+  name: semantikon
+  version: "1.1.0"
+  python_min: "3.11"
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: ${{ name|lower }}
+  version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
   sha256: 3b6e82b95d72e115e0c2211a2e30dc907ce038a12ed5821fea6cb3a8a95bea1a
 
 build:
+  number: 1
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  script: ${{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python {{ python_min }}
+    - python 3.11.*
     - pip
     - hatchling
     - hatch-vcs
   run:
     - bagofholding >=0.1.5,<=0.1.11
     - flowrep ==0.4.1
-    - python >={{ python_min }},<3.15
+    - python >=${{ python_min }},<3.15
     - python-graphviz >=0.20.3,<=0.21
     - networkx >=3.5,<3.7
     - numpy >=2.3.0,<2.5.0
@@ -35,25 +38,22 @@ requirements:
     - requests >=2.28.0,<2.34.0
     - typeguard >=4.0.0,<4.6.0
 
-test:
-  imports:
-    - semantikon
-  requires:
-    - pip
-    - python {{ python_min }}
-  commands:
-    - pip check
+tests:
+  - python:
+      imports:
+        - semantikon
+      pip_check: true
+      python_version: ${{ python_min }}
 
 about:
-  home: https://github.com/pyiron/semantikon
-  summary: 'semantikon - Ontological type system'
+  summary: semantikon - Ontological type system
   description: |
     In the realm of the workflow management systems, there are well defined inputs and outputs for each node. semantikon is a Python package to give scientific context to node inputs and outputs by providing type hinting and interpreters.
   license: BSD-3-Clause
-  license_family: BSD
   license_file: LICENSE
-  doc_url: https://semantikon.readthedocs.io/
-  dev_url: https://github.com/pyiron/semantikon
+  homepage: https://github.com/pyiron/semantikon
+  repository: https://github.com/pyiron/semantikon
+  documentation: https://semantikon.readthedocs.io/
 
 extra:
   recipe-maintainers:
