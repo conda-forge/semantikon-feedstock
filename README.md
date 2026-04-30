@@ -15,7 +15,6 @@ Documentation: https://semantikon.readthedocs.io/
 
 In the realm of the workflow management systems, there are well defined inputs and outputs for each node. semantikon is a Python package to give scientific context to node inputs and outputs by providing type hinting and interpreters.
 
-
 Current build status
 ====================
 
