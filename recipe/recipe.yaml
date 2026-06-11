@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: semantikon
-  version: 1.3.0
+  version: 1.3.1
   python_min: '3.11'
 
 package:
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
-  sha256: 415aec06f95fe98aeda1511ebf93ff1bfbe64caead5269e9a97567b284fd949f
+  sha256: 091b077b6d860d14009759e878e42973e0cadbe59dcca1dbd644d6aeabe087e9
 
 build:
   number: 0
@@ -26,7 +26,7 @@ requirements:
     - hatch-vcs
   run:
     - bagofholding >=0.1.5,<=0.1.11
-    - flowrep ==0.5.0
+    - flowrep ==0.5.1
     - python >=${{ python_min }},<3.15
     - python-graphviz >=0.20.3,<=0.21
     - networkx >=3.5,<3.7.0
