@@ -14,7 +14,7 @@ source:
   sha256: 0c252a318a537d1cd0d35f1cb7bf5c1b05f9fcfcbd99928311f61b985b771e56
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv
 
@@ -25,8 +25,8 @@ requirements:
     - hatchling
     - hatch-vcs
   run:
-    - bagofholding >=0.1.5,<=0.1.11
-    - flowrep ==0.5.1
+    - bagofholding >=0.1.5,<0.2.0
+    - flowrep >=0.5.1,<0.6.0
     - python >=${{ python_min }},<3.15
     - python-graphviz >=0.20.3,<=0.21
     - networkx >=3.5,<3.7.0
