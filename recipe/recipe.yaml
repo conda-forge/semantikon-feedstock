@@ -2,8 +2,7 @@ schema_version: 1
 
 context:
   name: semantikon
-  version: "1.4.2"
-  python_min: '3.11'
+  version: "1.4.3"
 
 package:
   name: ${{ name|lower }}
@@ -11,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
-  sha256: d88e29e8aef552d6df4492a73200ee8c2ed65ccabec82dc37995212b01faea1a
+  sha256: 30db96cae9d61e72b0331a2cc4e85b4bd7cecb54c3b1c44a46bea292a3240b03
 
 build:
   number: 0
@@ -30,11 +29,11 @@ requirements:
     - python >=${{ python_min }},<3.15
     - python-graphviz >=0.20.3,<=0.21
     - networkx >=3.5,<3.7.0
-    - numpy >=1.26.4,<2.5.0
+    - numpy >=1.26.4,<2.6.0
     - owlrl >=7.1.2,<7.7.0
     - pint >=0.24,<=0.25.3
     - rdflib >=7.1.1,<7.7.0
-    - pyshacl >=0.30.0,<=0.40.0
+    - pyshacl >=0.30.0,<=0.40.1
     - requests >=2.28.0,<2.35.0
     - typeguard >=4.0.0,<4.6.0
 tests:
@@ -42,7 +41,9 @@ tests:
       imports:
         - semantikon
       pip_check: true
-      python_version: ${{ python_min }}
+      python_version:
+        - ${{ python_min }}
+        - "*"
 
 about:
   summary: semantikon - Ontological type system
