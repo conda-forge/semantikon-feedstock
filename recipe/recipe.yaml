@@ -13,7 +13,7 @@ source:
   sha256: 30db96cae9d61e72b0331a2cc4e85b4bd7cecb54c3b1c44a46bea292a3240b03
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv
 
@@ -35,7 +35,7 @@ requirements:
     - rdflib >=7.1.1,<7.7.0
     - pyshacl >=0.30.0,<=0.40.1
     - requests >=2.28.0,<2.35.0
-    - typeguard >=4.0.0,<4.6.0
+    - typeguard >=4.0.0,<4.7.0
 tests:
   - python:
       imports:
