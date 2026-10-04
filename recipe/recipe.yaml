@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: semantikon
-  version: "1.4.3"
+  version: "1.4.4"
 
 package:
   name: ${{ name|lower }}
@@ -10,10 +10,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
-  sha256: 30db96cae9d61e72b0331a2cc4e85b4bd7cecb54c3b1c44a46bea292a3240b03
+  sha256: 388a8e7b7a01a222848b223c5fffdf2ade5e68e1b955ffa706206052ae9df61a
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv
 
